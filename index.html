@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Pastel Notes · Anime Diary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- LOGIN SCREEN (OWNER/GUEST SELECTION) -->
+        <div id="loginOverlay" class="login-overlay">
+            <div class="login-card">
+                <img src="images/notes.png" alt="notes logo" class="login-logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffb6c1%22 /><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22>📝</text></svg>'">
+                <h2>🌸 pastel diary</h2>
+                <p class="login-subtitle">enter as owner or continue as guest</p>
+                
+                <div class="owner-login-section">
+                    <input type="password" id="passwordInput" placeholder="owner password" class="login-input" autocomplete="off">
+                    <button id="loginBtn" class="login-button owner-btn">✨ owner access</button>
+                    <div id="loginError" class="login-error"></div>
+                </div>
+                
+                <div class="guest-section">
+                    <button id="guestBtn" class="login-button guest-btn">👀 continue as guest</button>
+                </div>
+                
+                <div class="view-mode-hint">guests can view full notes · owner can edit</div>
+            </div>
+        </div>
+
+        <!-- MAIN APP (HIDDEN UNTIL LOGIN/GUEST) -->
+        <div id="mainApp" class="main-app hidden">
+            <header class="app-header">
+                <div class="header-content">
+                    <img src="images/notes.png" alt="notes logo" class="logo-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffb6c1%22 /><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22>📝</text></svg>'">
+                    <h1>pastel notes <span class="header-heart">♡</span></h1>
+                </div>
+                <div class="header-controls">
+                    <button id="addNoteBtn" class="add-note-button">+ add new note</button>
+                    <button id="logoutBtn" class="logout-button" title="exit">🚪</button>
+                </div>
+            </header>
+
+            <main class="notes-grid" id="notesGrid">
+                <!-- notes will be injected via js -->
+            </main>
+
+            <div id="viewerBadge" class="viewer-badge hidden">👀 guest mode · read only · scroll to read full notes</div>
+            
+            <footer class="app-footer">
+                <span>created with ♡ by SHADOW</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
